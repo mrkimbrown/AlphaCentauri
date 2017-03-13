@@ -819,13 +819,44 @@ label, label + * {
 	clear: both;
 }
 .search-box input.search-box-text {
-	float: left;
+
+    width: 200px;
+	height: 36px;
+    border-radius: 18px;
+    padding: 5px 5px 5px 25px;
+    margin: 0 -1px 0 0;
+    float: left;
+    border: none;
+
+     /*==========================================*/
+	/*float: left;
 	width: 200px;
 	height: 36px;
-	margin: 0 -1px 0 0;
+	margin: 0 -1px 0 0;*/
 }
 .search-box .search-box-button {
-	float: left;
+
+
+
+    /*position: absolute;
+    top: 3px;
+    left: 5px;*/
+    float: left;
+	min-width: 86px;
+	height: 36px;
+
+
+    /*z-index: 10;*/
+    border-radius: 18px;
+    border: none;
+    background: url('../images/spyGlass_32x32.png'); /* Set the bg image here. with "no-repeat" */
+    background-repeat: no-repeat;
+    /*background-attachment: fixed;*/
+    background-position: center; 
+
+
+    /*==========================================*/
+	/*float: left;
 	min-width: 86px;
 	height: 36px;
 	border: none;
@@ -833,8 +864,22 @@ label, label + * {
 	padding: 0 15px;
 	text-align: center;
 	color: #fff;
-	text-transform: uppercase;
+	text-transform: uppercase;*/
 }
+
+.search-box-wrapper {
+    border:1px solid #ccc;
+    border-radius: 18px;
+    display:inline-block;
+    height: 42px;
+}
+
+/*input,
+button {
+    background-color:transparent;
+    border:0;
+}*/
+
 .search-box .search-box-button:hover {
 	background-color: #248ece;
 }

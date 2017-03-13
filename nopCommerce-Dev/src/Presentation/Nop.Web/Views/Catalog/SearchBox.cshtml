@@ -2,11 +2,15 @@
 @using Nop.Web.Models.Catalog;
 @using (Html.BeginRouteForm("ProductSearch", FormMethod.Get, new { id = "small-search-box-form" }))
 {
-    <input type="text" class="search-box-text" id="small-searchterms" autocomplete="off" name="q" placeholder="@T("Search.SearchBox.Tooltip")" />
-    @Html.Widget("searchbox_before_search_button")
-    <input type="submit" class="button-1 search-box-button" value="@T("Search.Button")" />
-    if (Model.SearchTermMinimumLength > 0)
-    {
+    <div class="search-box-wrapper">
+        <input type="text" class="search-box-text" id="small-searchterms" autocomplete="off" name="q" placeholder="@T("Search.SearchBox.Tooltip")" />
+        @Html.Widget("searchbox_before_search_button")
+        @*<input type="submit" class="button-1 search-box-button" value="@T("Search.Button")" />*@
+        <input type="submit" class="button-1 search-box-button" value="" />
+    </div>
+
+        if (Model.SearchTermMinimumLength > 0)
+        {
         <script type="text/javascript">
             $("#small-search-box-form").submit(function(event) {
                 if ($("#small-searchterms").val() == "") {
@@ -16,23 +20,23 @@
                 }
             });
         </script>
-    }
-    if (Model.AutoCompleteEnabled)
-    {
+        }
+        if (Model.AutoCompleteEnabled)
+        {
         <text>
             <script type="text/javascript">
                 $(document).ready(function() {
                     $('#small-searchterms').autocomplete({
-                            delay: 500,
-                            minLength: @(Model.SearchTermMinimumLength.ToString()),
-                            source: '@(Url.RouteUrl("ProductSearchAutoComplete"))',
-                            appendTo: '.search-box',
-                            select: function(event, ui) {
-                                $("#small-searchterms").val(ui.item.label);
-                                setLocation(ui.item.producturl);
-                                return false;
-                            }
-                        })
+                        delay: 500,
+                        minLength: @(Model.SearchTermMinimumLength.ToString()),
+                        source: '@(Url.RouteUrl("ProductSearchAutoComplete"))',
+                        appendTo: '.search-box',
+                        select: function(event, ui) {
+                            $("#small-searchterms").val(ui.item.label);
+                            setLocation(ui.item.producturl);
+                            return false;
+                        }
+                    })
                         .data("ui-autocomplete")._renderItem = function(ul, item) {
                             var t = item.label;
                             //html encode
@@ -45,6 +49,6 @@
                 });
             </script>
         </text>
-    }
-    @Html.Widget("searchbox")
-}
+        }
+        @Html.Widget("searchbox")
+        }
