@@ -1,3 +1,5 @@
+-- Change scope was too great. 
+-- This will now be removed from the SearchBox.cshtml
 
 --UPDATE [dbo].[LocaleStringResource]
 --SET ResourceValue = '&nbsp'
