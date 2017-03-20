@@ -64,6 +64,7 @@
     <Folder Include="dbo\Tables\" />
     <Folder Include="dbo\Functions\" />
     <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="dbo\XML Configurations" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Picture.sql" />
@@ -194,5 +195,9 @@
     <Build Include="dbo\Stored Procedures\DeleteGuests.sql" />
     <None Include="dbo\PostDeployment.sql" />
     <None Include="dbo\PreDeployment.sql" />
+    <Build Include="dbo\Stored Procedures\FindMyData_String.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="dbo\XML Configurations\categories.xml" />
   </ItemGroup>
 </Project>
